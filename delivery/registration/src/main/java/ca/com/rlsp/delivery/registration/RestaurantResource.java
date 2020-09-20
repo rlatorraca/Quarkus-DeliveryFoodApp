@@ -2,7 +2,10 @@ package ca.com.rlsp.delivery.registration;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -19,25 +22,37 @@ import javax.ws.rs.core.Response.Status;
 
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
+import ca.com.rlsp.delivery.registration.dto.AddRestaurantDTO;
+import ca.com.rlsp.delivery.registration.dto.RestaurantDTO;
+import ca.com.rlsp.delivery.registration.mapper.DishMapper;
+import ca.com.rlsp.delivery.registration.mapper.RestaurantMapper;
+
 @Path("/restaurants")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Tag(name="restaurant")
 public class RestaurantResource {
 
+	@Inject
+	RestaurantMapper restaurantMapper;
+	
+    @Inject
+    DishMapper dishMapper;
 	/******************************************
 	 * Restaurants 
 	 ******************************************/
 	
     @GET   
-    public List<Restaurant> getRestaurants() {
-    	return Restaurant.listAll();		           
+    public List<RestaurantDTO> getRestaurants() {
+    	Stream<Restaurant> restaurants = Restaurant.streamAll();
+        return restaurants.map(r -> restaurantMapper.toRestaurantDTO(r)).collect(Collectors.toList());    	           
     }
     
     @POST
     @Transactional
-    public Response addRestaurant(Restaurant dto) {
-    	dto.persist();
+    public Response addRestaurant(AddRestaurantDTO dto) {
+    	Restaurant restaurant = restaurantMapper.toRestaurant(dto);
+    	restaurant.persist();
     	return Response.status(Status.CREATED).build();
     	
     }

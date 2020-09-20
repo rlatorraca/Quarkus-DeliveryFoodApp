@@ -1,0 +1,7 @@
+restaurant:
+  - ID: 123
+    NAME: "New Restaurant"
+    OWNER: "Rodrigo Latorraca"
+  - ID: 1234
+    NAME: "Old Restaurant"
+    OWNER: "Matias Mancuzo"  

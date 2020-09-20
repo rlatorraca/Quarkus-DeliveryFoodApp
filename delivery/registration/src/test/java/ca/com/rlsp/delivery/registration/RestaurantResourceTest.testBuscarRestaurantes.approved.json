@@ -1,0 +1,12 @@
+[
+  {
+    "id": 123,
+    "name": "New Restaurant",
+    "owner": "Rodrigo Latorraca"
+  },
+  {
+    "id": 1234,
+    "name": "Old Restaurant",
+    "owner": "Matias Mancuzo"
+  }
+]

@@ -10,7 +10,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 @Entity
 @Table(name= "localization")
-public class Localization extends PanacheEntityBase {
+public class Locale extends PanacheEntityBase {
 
 
 	@Id

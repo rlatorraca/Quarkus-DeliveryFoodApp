@@ -2,6 +2,7 @@ package ca.com.rlsp.delivery.registration;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,8 +30,8 @@ public class Restaurant extends PanacheEntityBase {
 	
 	public String registerNumber;
 	
-	@OneToOne
-	public Localization localization;
+	@OneToOne(cascade = CascadeType.ALL)
+	public Locale localization;
 	
 	@CreationTimestamp
 	public Date createdDate;
