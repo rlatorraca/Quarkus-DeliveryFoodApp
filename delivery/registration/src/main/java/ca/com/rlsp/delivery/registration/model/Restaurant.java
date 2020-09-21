@@ -1,4 +1,4 @@
-package ca.com.rlsp.delivery.registration;
+package ca.com.rlsp.delivery.registration.model;
 
 import java.util.Date;
 

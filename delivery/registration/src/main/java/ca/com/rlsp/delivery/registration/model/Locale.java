@@ -1,4 +1,4 @@
-package ca.com.rlsp.delivery.registration;
+package ca.com.rlsp.delivery.registration.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

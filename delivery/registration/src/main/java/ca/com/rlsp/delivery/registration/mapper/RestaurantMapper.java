@@ -4,9 +4,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import ca.com.rlsp.delivery.registration.Restaurant;
 import ca.com.rlsp.delivery.registration.dto.AddRestaurantDTO;
 import ca.com.rlsp.delivery.registration.dto.RestaurantDTO;
+import ca.com.rlsp.delivery.registration.model.Restaurant;
 
 @Mapper(componentModel = "cdi")
 public interface RestaurantMapper {
