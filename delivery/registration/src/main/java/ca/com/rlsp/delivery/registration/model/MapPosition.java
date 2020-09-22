@@ -9,8 +9,8 @@ import javax.persistence.Table;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 @Entity
-@Table(name= "localization")
-public class Locale extends PanacheEntityBase {
+@Table(name= "map_position")
+public class MapPosition extends PanacheEntityBase {
 
 
 	@Id

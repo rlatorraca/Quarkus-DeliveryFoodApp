@@ -9,11 +9,11 @@ public class RestaurantDTO {
 	
 	public String owner;
 	
-	public String name_on_CRA;
+	public String nameOnCRA;
 	
 	public String registerNumber;
 		
-	public LocaleDTO localization;
+	public MapPositionDTO mapPosition;
 		
 	public Date createdDate;
 }

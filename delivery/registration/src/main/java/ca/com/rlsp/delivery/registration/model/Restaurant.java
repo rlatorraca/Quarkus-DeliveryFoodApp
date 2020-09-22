@@ -31,7 +31,7 @@ public class Restaurant extends PanacheEntityBase {
 	public String registerNumber;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	public Locale localization;
+	public MapPosition mapPosition;
 	
 	@CreationTimestamp
 	public Date createdDate;

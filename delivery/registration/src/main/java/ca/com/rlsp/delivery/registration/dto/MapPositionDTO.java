@@ -1,6 +1,6 @@
 package ca.com.rlsp.delivery.registration.dto;
 
-public class LocaleDTO {
+public class MapPositionDTO {
 
 	public double latitudee;
 	
