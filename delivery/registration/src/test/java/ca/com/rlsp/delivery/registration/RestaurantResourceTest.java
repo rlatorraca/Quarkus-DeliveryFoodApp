@@ -4,6 +4,7 @@ import javax.ws.rs.core.Response.Status;
 
 import org.approvaltests.Approvals;
 import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.github.database.rider.cdi.api.DBRider;
@@ -13,10 +14,12 @@ import com.github.database.rider.core.api.dataset.DataSet;
 
 import ca.com.rlsp.delivery.registration.dto.UpdateRestaurantDTO;
 import ca.com.rlsp.delivery.registration.model.Restaurant;
+import ca.com.rlsp.delivery.registration.utils.TokenUtils;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.http.Header;
 import io.restassured.specification.RequestSpecification;
 
 @DBRider
@@ -27,10 +30,10 @@ public class RestaurantResourceTest {
 
     private String token;
 
-//    @BeforeEach
-//    public void gereToken() throws Exception {
-//        token = TokenUtils.generateTokenString("/JWTProprietarioClaims.json", null);
-//    }
+    @BeforeEach
+    public void gereToken() throws Exception {
+        token = TokenUtils.generateTokenString("/JWTOwnerClaims.json", null);
+    }
 
     @Test
     @DataSet("restaurants-scenario-1.yml")
@@ -46,7 +49,9 @@ public class RestaurantResourceTest {
     
 
     private RequestSpecification given() {
-        return RestAssured.given().contentType(ContentType.JSON);
+        //return RestAssured.given().contentType(ContentType.JSON);
+    	 return RestAssured.given()
+                 .contentType(ContentType.JSON).header(new Header("Authorization", "Bearer " + token));
     }
 
     //Test PUT example
