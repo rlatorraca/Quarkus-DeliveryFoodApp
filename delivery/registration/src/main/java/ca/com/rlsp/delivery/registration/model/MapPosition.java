@@ -17,7 +17,7 @@ public class MapPosition extends PanacheEntityBase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long id;
 	
-	public double latitudee;
+	public double latitude;
 	
 	public double longetude;
 }

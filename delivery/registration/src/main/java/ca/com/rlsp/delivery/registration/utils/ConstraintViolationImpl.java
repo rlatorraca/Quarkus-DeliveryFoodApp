@@ -1,5 +1,6 @@
 package ca.com.rlsp.delivery.registration.utils;
 
+import java.io.Serializable;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -7,11 +8,14 @@ import javax.validation.ConstraintViolation;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-public class ConstraintViolationImpl {
+public class ConstraintViolationImpl implements Serializable{
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
-    @Schema(description = "Atribute Path, ex: initial date, person.address.number", required = false)
+	@Schema(description = "Atribute Path, ex: initial date, person.address.number", required = false)
     private final String attribute;
 
     @Schema(description = "Descriptive error message possibly associated with the path" , required = true)

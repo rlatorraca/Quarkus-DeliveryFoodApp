@@ -13,8 +13,8 @@ public interface DishMapper {
 
     DishDTO toDTO(Dish d);
 
-    Dish toPrato(AddDishDTO dto);
+    Dish toDish(AddDishDTO dto);
 
-    void toPrato(UpdateDishPriceDTO dto, @MappingTarget Dish dish);
+    void toDish(UpdateDishPriceDTO dto, @MappingTarget Dish dish);
 
 }

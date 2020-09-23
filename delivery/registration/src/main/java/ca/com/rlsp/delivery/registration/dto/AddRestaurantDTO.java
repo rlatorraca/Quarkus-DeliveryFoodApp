@@ -8,8 +8,9 @@ import javax.validation.constraints.Size;
 
 import ca.com.rlsp.delivery.registration.model.Restaurant;
 import ca.com.rlsp.delivery.registration.utils.DTO;
+import ca.com.rlsp.delivery.registration.utils.ValidDTO;
 
-
+@ValidDTO
 public class AddRestaurantDTO implements DTO{
 
 	
@@ -18,7 +19,7 @@ public class AddRestaurantDTO implements DTO{
 	public String owner;
 	
 	@Size(min=3, max=50)
-	public String name_on_CRA;
+	public String nameOnCRA;
 	
 	@Pattern(regexp="[0-9]{2}\\.[0-9]{3}\\.[0-9]{3}\\/[0-9]{4}\\-[0-9]{2}")
 	@NotNull
