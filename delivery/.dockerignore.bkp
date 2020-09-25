@@ -1,0 +1,10 @@
+*
+!target/*-runner
+!target/*-runner.jar
+!target/lib/*
+!target/quarkus-app/*
+
+!obj/Docker/publish/*
+!obj/Docker/empty/
+
+!**/Quarkus/delivery/*
