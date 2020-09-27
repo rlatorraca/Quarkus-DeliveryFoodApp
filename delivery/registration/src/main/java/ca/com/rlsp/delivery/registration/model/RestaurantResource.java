@@ -22,6 +22,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.SimplyTimed;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.openapi.annotations.enums.SecuritySchemeType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -64,6 +67,9 @@ public class RestaurantResource {
 	 ******************************************/
 	
     @GET   
+    @Counted(name="Search amount for Restaurants", description = "Counter for Restaurants searching on API") 
+    @SimplyTimed(name = "name",	description = "Computing the time spent to run a searching for Restaurants")
+    @Timed(name="All computing time for do a searching")
     public List<RestaurantDTO> getRestaurants() {
     	Stream<Restaurant> restaurants = Restaurant.streamAll();
         return restaurants.map(r -> restaurantMapper.toRestaurantDTO(r)).collect(Collectors.toList());    	           
