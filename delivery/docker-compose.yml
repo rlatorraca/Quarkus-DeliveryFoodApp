@@ -8,6 +8,16 @@ services:
       POSTGRES_PASSWORD: 123
     ports:
       - "5432:5432"
+      
+  postgres_marketplace:
+    container_name: postgres_marketplace_delivery
+    image: postgres:12.2
+    environment: 
+      POSTGRES_USER: marketplace
+      POSTGRES_PASSWORD: marketplace
+    ports:
+      - "5433:5432"
+      
   keycloak_delivery:
     container_name: keycloak_delivery
     image: jboss/keycloak:11.0.2
@@ -39,14 +49,6 @@ services:
     image: grafana/grafana:6.5.0
     network_mode: "host"
 
-#  postgres_marketplace:
-#    container_name: postgres_marketplace_delivery
-#    image: postgres:12.2
-#    environment: 
-#      POSTGRES_USER: marketplace
-#      POSTGRES_PASSWORD: marketplace
-#    ports:
-#      - "5433:5432"
 #  
 
 #    
