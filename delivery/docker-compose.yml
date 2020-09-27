@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: registration
       POSTGRES_PASSWORD: 123
     ports:
-      - "5433:5432"
+      - "5432:5432"
   keycloak_delivery:
     container_name: keycloak_delivery
     image: jboss/keycloak:11.0.2
