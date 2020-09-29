@@ -39,12 +39,12 @@ services:
       - "14250:14250"
       - "9411:9411"
 
-  prometheus_ifood:
+  prometheus_delivery :
     container_name: prometheus_delivery
     image: prometheus-delivery
     network_mode: "host"
     
-  grafana_ifood:
+  grafana_devlivery:
     container_name: grafana_delivery
     image: grafana/grafana:6.5.0
     network_mode: "host"
