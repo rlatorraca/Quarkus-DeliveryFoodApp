@@ -49,17 +49,14 @@ services:
     image: grafana/grafana:6.5.0
     network_mode: "host"
 
-#  
-
-#    
-#  artemis_ifood:
-#    container_name: artemis_delivery
-#    image: vromero/activemq-artemis:2.11.0
-#    network_mode: "host"
-#    environment: 
-#      ARTEMIS_USERNAME: admin
-#      ARTEMIS_PASSWORD: admin
-#      
+  artemis_delivery:
+    container_name: artemis_delivery
+    image: vromero/activemq-artemis:2.11.0
+    network_mode: "host"
+    environment: 
+      ARTEMIS_USERNAME: admin
+      ARTEMIS_PASSWORD: admin      
+#     
 #  mongodb_ifood:
 #    container_name: mongodb_delivery
 #    image: mongo:4.2.5-bionic
