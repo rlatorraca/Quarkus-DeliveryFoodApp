@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
@@ -35,6 +37,8 @@ import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement
 import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirements;
 import org.eclipse.microprofile.openapi.annotations.security.SecurityScheme;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.eclipse.microprofile.reactive.messaging.Channel;
+import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 import ca.com.rlsp.delivery.registration.dto.AddDishDTO;
 import ca.com.rlsp.delivery.registration.dto.AddRestaurantDTO;
@@ -57,6 +61,10 @@ import ca.com.rlsp.delivery.registration.utils.ConstraintViolationResponse;
 //@SecurityRequirements(value = {@SecurityRequirement(name = "delivery-oauth")})
 public class RestaurantResource {
 
+	@Inject
+	@Channel("restaurants")
+	Emitter<String> emitter;
+	
 	@Inject
 	RestaurantMapper restaurantMapper;
 	
@@ -82,6 +90,10 @@ public class RestaurantResource {
     public Response addRestaurant(@Valid AddRestaurantDTO dto) {
     	Restaurant restaurant = restaurantMapper.toRestaurant(dto);
     	restaurant.persist();
+    	Jsonb jsonb = JsonbBuilder.create();
+        String json = jsonb.toJson(restaurant);
+        emitter.send(json);
+    	//emitter.send(restaurant);        
     	return Response.status(Status.CREATED).build();
     	
     }
