@@ -25,7 +25,7 @@ public class AddRestaurantDTO implements DTO{
 	@NotNull
 	public String registerNumber;
 	
-	public MapPositionDTO mapPosition;
+	public MappositionDTO mapPosition;
 	
 	
 	 @Override

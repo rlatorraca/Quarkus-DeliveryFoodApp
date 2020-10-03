@@ -13,7 +13,7 @@ public class RestaurantDTO {
 	
 	public String registerNumber;
 		
-	public MapPositionDTO mapPosition;
+	public MappositionDTO mapPosition;
 		
 	public Date createdDate;
 }

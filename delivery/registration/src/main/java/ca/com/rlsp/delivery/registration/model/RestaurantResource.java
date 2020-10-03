@@ -141,7 +141,7 @@ public class RestaurantResource {
     		throw new NotFoundException("Restaurant does not exist");
     	}
     	
-    	Stream<Dish> dish = Dish.stream("restaurante", restaurantOptional.get());
+    	Stream<Dish> dish = Dish.stream("restaurant", restaurantOptional.get());
         return dish.map(p -> dishMapper.toDTO(p)).collect(Collectors.toList());
     	
     }
