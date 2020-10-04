@@ -40,4 +40,4 @@ VALUES(1234, 'Bacon + Omelete', 'Great for brunch', 123, 3.99);
 
 INSERT INTO dish
 (id, name, description, restaurant_id, price)
-VALUES(1234, 'Fish Fried', 'Scallops from Maritimes', 123, 199.99);
+VALUES(1235, 'Fish Fried', 'Scallops from Maritimes', 123, 199.99);
