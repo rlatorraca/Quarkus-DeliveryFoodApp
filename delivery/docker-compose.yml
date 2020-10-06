@@ -65,7 +65,7 @@ services:
     environment: 
       MONGO_INITDB_ROOT_USERNAME: order
       MONGO_INITDB_ROOT_PASSWORD: order
-      MONGO_INITDB_DATABASE: order
+      MONGO_INITDB_DATABASE: admin
 
 #      
   zookeeper:
