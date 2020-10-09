@@ -14,10 +14,6 @@ import ca.com.rlsp.delivery.registration.utils.ValidDTO;
 public class AddRestaurantDTO implements DTO{
 
 	
-	@NotEmpty
-	@NotNull
-	public String owner;
-	
 	@Size(min=3, max=50)
 	public String nameOnCRA;
 	
