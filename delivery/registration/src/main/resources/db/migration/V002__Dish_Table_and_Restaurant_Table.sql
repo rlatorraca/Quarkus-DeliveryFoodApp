@@ -10,7 +10,7 @@ CREATE TABLE public.restaurant (
 );
 
 
--- public.restaurante foreign keys
+-- public.Restaurant foreign keys
 
 ALTER TABLE public.restaurant ADD CONSTRAINT fkdfbggt9ievc4ev74wl3tdnscl FOREIGN KEY (mapposition_id) REFERENCES mapposition(id);
 

@@ -3,10 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>ca.com.rlsp.delivery</groupId>
-	<artifactId>marketplace</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	
+	<modelVersion>4.0.0</modelVersion>	
+	
+	<parent>
+		<groupId>ca.com.rlsp.delivery</groupId>
+		<artifactId>delivery</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+  	</parent>
+  	
+  	<artifactId>marketplace</artifactId>	
+<!-- 	
 	<properties>
 		<compiler-plugin.version>3.8.1</compiler-plugin.version>
 		<maven.compiler.parameters>true</maven.compiler.parameters>
@@ -19,7 +26,7 @@
 		<quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
 		<quarkus.platform.version>1.7.3.Final</quarkus.platform.version>
 		<surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-	</properties>
+	</properties> -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

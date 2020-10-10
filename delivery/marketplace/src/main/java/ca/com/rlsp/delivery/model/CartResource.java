@@ -64,9 +64,9 @@ public class CartResource {
         List<DishOrderDTO> dishes = pratoCarrinho.stream().map(pc -> from(pc)).collect(Collectors.toList());
         order.dishes = dishes;
 
-        RestaurantDTO restaurante = new RestaurantDTO();
-        restaurante.name = "Restaurant Name";
-        order.restaurant = restaurante;
+        RestaurantDTO Restaurant = new RestaurantDTO();
+        Restaurant.name = "Restaurant Name";
+        order.restaurant = Restaurant;
         emitterOrder.send(order);
         return DishCart.delete(clientPgPool, client);
     }

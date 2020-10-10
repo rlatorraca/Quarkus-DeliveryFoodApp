@@ -67,7 +67,7 @@ public class RestaurantResource {
 
 	@Inject
 	@Channel("restaurants")
-	Emitter<String> emitter;
+	Emitter<Restaurant> emitter;
 
 	@Inject
 	JsonWebToken jwt;
@@ -106,9 +106,10 @@ public class RestaurantResource {
 		Restaurant restaurant = restaurantMapper.toRestaurant(dto);
 		restaurant.owner = sub;
 		restaurant.persist();
-		Jsonb jsonb = JsonbBuilder.create();
-		String json = jsonb.toJson(restaurant);
-		emitter.send(json);
+//		Jsonb jsonb = JsonbBuilder.create();
+//		String json = jsonb.toJson(restaurant);
+//		emitter.send(json);
+		emitter.send(restaurant);
 		// emitter.send(restaurant);
 		return Response.status(Status.CREATED).build();
 
@@ -224,8 +225,8 @@ public class RestaurantResource {
 	@Tag(name = "dish")
 	public void deleteDish(@PathParam("idRestaurant") Long idRestaurant, @PathParam("id") Long id) {
 
-		Optional<Restaurant> restauranteOptional = Restaurant.findByIdOptional(idRestaurant);
-		if (restauranteOptional.isEmpty()) {
+		Optional<Restaurant> RestaurantOptional = Restaurant.findByIdOptional(idRestaurant);
+		if (RestaurantOptional.isEmpty()) {
 			throw new NotFoundException("Restaurant does not exist");
 		}
 

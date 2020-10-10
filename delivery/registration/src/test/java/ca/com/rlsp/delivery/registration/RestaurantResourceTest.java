@@ -37,7 +37,7 @@ public class RestaurantResourceTest {
 
     @Test
     @DataSet("restaurants-scenario-1.yml")
-    public void testBuscarRestaurantes() {
+    public void testBuscarRestaurants() {
         String resultado = given()
                 .when().get("/restaurants")
                 .then()
@@ -58,7 +58,7 @@ public class RestaurantResourceTest {
 
     @Test
     @DataSet("restaurants-scenario-1.yml")
-    public void testAlterarRestaurante() {
+    public void testAlterarRestaurant() {
     	UpdateRestaurantDTO dto = new UpdateRestaurantDTO();
         dto.nameOnCRA = "newName";
         Long parameterValue = 123L;
