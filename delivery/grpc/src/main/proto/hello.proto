@@ -1,0 +1,24 @@
+//https://developers.google.com/protocol-buffers/docs/proto3
+
+//syntax
+//option
+//service
+//message
+
+syntax = "proto3";
+
+option java_package ="ca.com.rlsp.proto";
+option java_multiple_files=true;
+
+service HelloService {
+    rpc DigaOla (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string nome = 1;
+}
+
+message HelloResponse {
+    string mensagem = 1;
+    int32 quantidadeDeChamadas = 2;
+}
