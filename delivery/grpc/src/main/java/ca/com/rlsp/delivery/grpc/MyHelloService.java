@@ -6,9 +6,10 @@ import javax.inject.Singleton;
 
 import ca.com.rlsp.proto.HelloRequest;
 import ca.com.rlsp.proto.HelloResponse;
+import io.grpc.stub.StreamObserver;
 import io.smallrye.mutiny.Uni;
 
-// Se quiser trabalhar sem o Mutiny
+/** Se quiser trabalhar sem o Mutiny */
 
 //@Singleton
 //public class MyHelloService extends ca.com.rlsp.proto.HelloServiceGrpc.HelloServiceImplBase {
@@ -25,9 +26,10 @@ import io.smallrye.mutiny.Uni;
 //
 //}
 
-//Trabalhando com Mutiny
 
-//@Singleton
+/**Trabalhando com Mutiny */
+
+@Singleton
 public class MyHelloService extends ca.com.rlsp.proto.MutinyHelloServiceGrpc.HelloServiceImplBase {
 
     AtomicInteger inteiro = new AtomicInteger();

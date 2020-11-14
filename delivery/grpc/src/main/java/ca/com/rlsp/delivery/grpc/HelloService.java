@@ -24,7 +24,7 @@ public class HelloService {
     MutinyHelloServiceStub helloServiceMutiny;
 
     @GET
-    @Path("/block/{nome}")
+    @Path("block/{nome}")
     public String getBlock(@PathParam("nome") String nome) {
         HelloRequest request = HelloRequest.newBuilder().setNome(nome).build();
 		HelloResponse response = olaService.digaOla(request);
@@ -33,7 +33,7 @@ public class HelloService {
 
    
 	@GET
-    @Path("/reativo/{nome}")
+    @Path("reativo/{nome}")
     public Uni<String> getReativo(@PathParam("nome") String nome) {
     	HelloRequest request = HelloRequest.newBuilder().setNome(nome).build();
         Uni<HelloResponse> response = helloServiceMutiny.digaOla(request);
