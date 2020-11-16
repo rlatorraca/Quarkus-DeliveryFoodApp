@@ -38,10 +38,10 @@
 		<module>registration</module>
 		<module>marketplace</module>
 		<module>order</module>
-<!-- 		<module>command-mode</module>
+ 		<module>command-mode</module>
 		<module>picocli</module>
 		<module>grpc</module>
-		<module>graphql</module> -->
+		<module>graphql</module>
   </modules>
   
 </project>

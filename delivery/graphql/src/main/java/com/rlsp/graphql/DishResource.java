@@ -45,8 +45,8 @@ public class DishResource {
         return restaurante;
     }
 
-    @Mutation
-    @Description("Change the restaurant")
+    @Mutation // Altera; Inclui ou Exluir
+    @Description("Change restaurant anem")
     public Restaurant alterar(Restaurant restaurant) {
         System.out.println(restaurant.getName());
         return restaurant;
